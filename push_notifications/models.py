@@ -15,7 +15,7 @@ class Device(models.Model):
 		help_text=_("Inactive devices will not be sent notifications"))
 	user = models.ForeignKey(SETTINGS["USER_MODEL"], blank=True, null=True)
 	date_created = models.DateTimeField(verbose_name=_("Creation date"), auto_now_add=True, null=True)
-    version = models.CharField(verbose_name="App Version", max_length=255, null=True, blank=True)
+	version = models.CharField(verbose_name="App Version", max_length=255, null=True, blank=True)
 
 	class Meta:
 		abstract = True
