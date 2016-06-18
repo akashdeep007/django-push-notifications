@@ -659,6 +659,8 @@ def apns_send_bulk_message(registration_ids, alert, **kwargs):
 
 def apns_send_message(registration_id, alert, **kwargs):
     apns = APNs(enhanced=True)
+    kwargs.setdefault('sound', 'default')
+    kwargs.setdefault('badge', 1)
     # Send a notification
     payload = Payload(alert=alert, **kwargs)
     apns.gateway_server.send_notification(registration_id, payload)
